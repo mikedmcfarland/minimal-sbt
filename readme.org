@@ -1,0 +1,30 @@
+* Example session
+#+begin_example
+  > sbt                                                                                                                1 ↵
+  [info] Loading global plugins from /Users/mike/dotfiles/scala/.sbt/0.13/plugins
+  [info] Loading project definition from /Users/mike/projects/minimal-sbt/project
+  [info] Set current project to minimal-sbt (in build file:/Users/mike/projects/minimal-sbt/)
+  > console
+  [info] Compiling 1 Scala source to /Users/mike/projects/minimal-sbt/target/scala-2.11/classes...
+  [info] Starting scala interpreter...
+  [info]
+  Welcome to Scala 2.11.8 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_60).
+  Type in expressions for evaluation. Or try :help.
+
+  scala> Funtimes.greeting
+  res0: String = hello world
+
+  scala> import Funtimes._
+  import Funtimes._
+
+  scala> greeting
+  res1: String = hello world
+
+  scala> import com.fevo.commons.util.SingletonCache
+  import com.fevo.commons.util.SingletonCache
+#+end_example
+
+* Notes
+- you can pull from other dependencies if you add more resolvers, only maven local is added. Typesafe's are common.
+
+- =build.properties= isn't necessary, but I highly recommend you add it. It guarantees you use the same version of sbt every time. You will feel pain if you don't do this as SBTs api changes, and suddenly your build breaks for unknown reasons.
